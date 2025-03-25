@@ -1,0 +1,88 @@
+{
+	"edges": [
+		{
+			"id": "xy-edge__capsule_preview_inference_video_2-results",
+			"source": "capsule_preview_inference_video_2",
+			"target": "results"
+		},
+		{
+			"id": "xy-edge__capsule_lightning_pose_inference_evaluation_asset_registration_1-results",
+			"source": "capsule_lightning_pose_inference_evaluation_asset_registration_1",
+			"target": "results"
+		},
+		{
+			"id": "xy-edge__f0ae51fb-4525-4a12-ba48-87e26c708e3f-capsule_preview_inference_video_2",
+			"source": "f0ae51fb-4525-4a12-ba48-87e26c708e3f",
+			"target": "capsule_preview_inference_video_2"
+		},
+		{
+			"id": "xy-edge__f0ae51fb-4525-4a12-ba48-87e26c708e3f-capsule_lightning_pose_inference_evaluation_asset_registration_1",
+			"source": "f0ae51fb-4525-4a12-ba48-87e26c708e3f",
+			"target": "capsule_lightning_pose_inference_evaluation_asset_registration_1"
+		},
+		{
+			"id": "xy-edge__64eb740a-a74d-4e9b-8bff-c78c953bf32a-capsule_lightning_pose_inference_evaluation_asset_registration_1",
+			"source": "64eb740a-a74d-4e9b-8bff-c78c953bf32a",
+			"target": "capsule_lightning_pose_inference_evaluation_asset_registration_1"
+		}
+	],
+	"nodes": [
+		{
+			"data": {
+				"capsule_id": "d57d4611-b49a-41de-ba60-7f28ae5cc05a"
+			},
+			"id": "capsule_lightning_pose_inference_evaluation_asset_registration_1",
+			"position": {
+				"x": 999.8121973578548,
+				"y": 293.4603010460133
+			},
+			"selected": true,
+			"type": "capsule"
+		},
+		{
+			"id": "results",
+			"position": {
+				"x": 867.8281774554,
+				"y": 629.5257900081409
+			},
+			"selected": false,
+			"type": "results"
+		},
+		{
+			"data": {
+				"capsule_id": "06f5bd82-6294-4265-a19c-ed091cf6ee91"
+			},
+			"id": "capsule_preview_inference_video_2",
+			"position": {
+				"x": 684.3626696666902,
+				"y": 290.2295294796828
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"id": "f0ae51fb-4525-4a12-ba48-87e26c708e3f",
+			"position": {
+				"x": 892.9391457791462,
+				"y": 54.003795920719085
+			},
+			"selected": false,
+			"type": "dataset"
+		},
+		{
+			"id": "64eb740a-a74d-4e9b-8bff-c78c953bf32a",
+			"position": {
+				"x": 1186.9367294518938,
+				"y": 57.908951060471566
+			},
+			"selected": false,
+			"type": "dataset"
+		}
+	],
+	"timestamp": 1742860659826,
+	"viewport": {
+		"x": -345.5309738517591,
+		"y": 66.81190560143486,
+		"zoom": 0.5674931577420624
+	}
+}

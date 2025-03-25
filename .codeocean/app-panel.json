@@ -1,0 +1,16 @@
+{
+	"version": 1,
+	"datasets": [
+		{
+			"id": "f0ae51fb-4525-4a12-ba48-87e26c708e3f",
+			"name": "Behavior Data Asset"
+		},
+		{
+			"id": "64eb740a-a74d-4e9b-8bff-c78c953bf32a",
+			"name": "Trained Lightning Pose Model"
+		}
+	],
+	"processes": [
+		"capsule_lightning_pose_inference_evaluation_asset_registration_1"
+	]
+}

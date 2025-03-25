@@ -1,0 +1,13 @@
+{
+	"version": 1,
+	"attached_datasets": [
+		{
+			"id": "64eb740a-a74d-4e9b-8bff-c78c953bf32a",
+			"mount": "342_NP.3_327_NP.2_Front_Face"
+		},
+		{
+			"id": "f0ae51fb-4525-4a12-ba48-87e26c708e3f",
+			"mount": "ecephys_713655_2024-08-08_11-52-03"
+		}
+	]
+}
