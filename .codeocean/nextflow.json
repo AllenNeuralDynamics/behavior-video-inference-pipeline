@@ -2,13 +2,13 @@
 	"version": 1,
 	"processes": [
 		{
-			"name": "capsule_lightning_pose_inference_evaluation_asset_registration_1",
+			"name": "capsule_copy_of_lightning_pose_inference_evaluation_asset_registration_1",
 			"capsule": {
-				"id": "d57d4611-b49a-41de-ba60-7f28ae5cc05a",
-				"name": "Lightning Pose Inference, Evaluation, Asset Registration",
-				"slug": "6146766",
-				"commit": "62f68466cb31090a3a05dbe8f5460426092aa9ab",
-				"image_tag": "29cd96ba6106a02e6cfa21cbf2a61cce",
+				"id": "ac53c6d1-1265-4458-82e7-310c256a9dbb",
+				"name": "Copy of Lightning Pose Inference, Evaluation, Asset Registration",
+				"slug": "9969331",
+				"commit": "2f5e5a5f964b69f325dc33849113f3aebbca69df",
+				"image_tag": "85186d594cb4a57f66e8fcb36a0e87e4",
 				"app_panel": true
 			},
 			"resources": {
@@ -23,7 +23,7 @@
 					"type": "dataset",
 					"name": "342_NP.3_327_NP.2_Front_Face",
 					"source_path": "342_NP.3_327_NP.2_Front_Face/",
-					"target_path": "model_mount",
+					"target_path": "342_NP.3_327_NP.2_Front_Face",
 					"collect": true
 				},
 				{
@@ -32,12 +32,12 @@
 					"type": "dataset",
 					"name": "ecephys_713655_2024-08-08_11-52-03",
 					"source_path": "ecephys_713655_2024-08-08_11-52-03/",
-					"target_path": "behavior_mount",
+					"target_path": "ecephys_713655_2024-08-08_11-52-03",
 					"collect": true
 				}
 			],
 			"results": {
-				"id": "d57d4611-b49a-41de-ba60-7f28ae5cc05a"
+				"id": "ac53c6d1-1265-4458-82e7-310c256a9dbb"
 			}
 		},
 		{
@@ -60,7 +60,7 @@
 					"type": "dataset",
 					"name": "ecephys_713655_2024-08-08_11-52-03",
 					"source_path": "ecephys_713655_2024-08-08_11-52-03/",
-					"target_path": "behavior_mount",
+					"target_path": "ecephys_713655_2024-08-08_11-52-03",
 					"collect": true
 				}
 			],
