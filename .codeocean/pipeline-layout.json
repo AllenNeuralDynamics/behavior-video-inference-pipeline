@@ -6,32 +6,34 @@
 			"target": "results"
 		},
 		{
-			"id": "xy-edge__capsule_copy_of_lightning_pose_inference_evaluation_asset_registration_1-results",
-			"source": "capsule_copy_of_lightning_pose_inference_evaluation_asset_registration_1",
-			"target": "results"
-		},
-		{
 			"id": "xy-edge__f0ae51fb-4525-4a12-ba48-87e26c708e3f-capsule_preview_inference_video_2",
+			"selected": false,
 			"source": "f0ae51fb-4525-4a12-ba48-87e26c708e3f",
 			"target": "capsule_preview_inference_video_2"
 		},
 		{
-			"id": "xy-edge__f0ae51fb-4525-4a12-ba48-87e26c708e3f-capsule_copy_of_lightning_pose_inference_evaluation_asset_registration_1",
+			"id": "xy-edge__f0ae51fb-4525-4a12-ba48-87e26c708e3f-capsule_lightning_pose_inference_evaluation_asset_registration_3",
+			"selected": false,
 			"source": "f0ae51fb-4525-4a12-ba48-87e26c708e3f",
-			"target": "capsule_copy_of_lightning_pose_inference_evaluation_asset_registration_1"
+			"target": "capsule_lightning_pose_inference_evaluation_asset_registration_3"
 		},
 		{
-			"id": "xy-edge__64eb740a-a74d-4e9b-8bff-c78c953bf32a-capsule_copy_of_lightning_pose_inference_evaluation_asset_registration_1",
+			"id": "xy-edge__capsule_lightning_pose_inference_evaluation_asset_registration_3-results",
+			"source": "capsule_lightning_pose_inference_evaluation_asset_registration_3",
+			"target": "results"
+		},
+		{
+			"id": "xy-edge__64eb740a-a74d-4e9b-8bff-c78c953bf32a-capsule_lightning_pose_inference_evaluation_asset_registration_3",
 			"source": "64eb740a-a74d-4e9b-8bff-c78c953bf32a",
-			"target": "capsule_copy_of_lightning_pose_inference_evaluation_asset_registration_1"
+			"target": "capsule_lightning_pose_inference_evaluation_asset_registration_3"
 		}
 	],
 	"nodes": [
 		{
 			"id": "results",
 			"position": {
-				"x": 867.8281774554,
-				"y": 629.5257900081409
+				"x": 906.2867202836867,
+				"y": 551.1665089955067
 			},
 			"selected": false,
 			"type": "results"
@@ -42,8 +44,8 @@
 			},
 			"id": "capsule_preview_inference_video_2",
 			"position": {
-				"x": 684.3626696666902,
-				"y": 290.2295294796828
+				"x": 710.2009786015551,
+				"y": 250.44490323682408
 			},
 			"selected": false,
 			"type": "capsule"
@@ -58,26 +60,31 @@
 			"type": "dataset"
 		},
 		{
-			"id": "64eb740a-a74d-4e9b-8bff-c78c953bf32a",
+			"data": {
+				"capsule_id": "d57d4611-b49a-41de-ba60-7f28ae5cc05a"
+			},
+			"id": "capsule_lightning_pose_inference_evaluation_asset_registration_3",
 			"position": {
-				"x": 1186.9367294518938,
-				"y": 57.908951060471566
+				"x": 1033.7396809336715,
+				"y": 256.5223057275543
 			},
 			"selected": false,
-			"type": "dataset"
+			"type": "capsule"
 		},
 		{
-			"data": {
-				"capsule_id": "ac53c6d1-1265-4458-82e7-310c256a9dbb"
-			},
-			"id": "capsule_copy_of_lightning_pose_inference_evaluation_asset_registration_1",
+			"id": "64eb740a-a74d-4e9b-8bff-c78c953bf32a",
 			"position": {
-				"x": 999.8121973578548,
-				"y": 293.4603010460133
+				"x": 1241.8988994817603,
+				"y": 61.74826198007801
 			},
 			"selected": true,
-			"type": "capsule"
+			"type": "dataset"
 		}
 	],
-	"timestamp": 1743193079367
+	"timestamp": 1743447913532,
+	"viewport": {
+		"x": -265.77076416267937,
+		"y": 137.56718916528925,
+		"zoom": 0.6011319126187312
+	}
 }
