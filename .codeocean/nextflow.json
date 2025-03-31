@@ -2,38 +2,12 @@
 	"version": 1,
 	"processes": [
 		{
-			"name": "capsule_preview_inference_video_2",
-			"capsule": {
-				"id": "06f5bd82-6294-4265-a19c-ed091cf6ee91",
-				"name": "Preview Inference Video",
-				"slug": "6942612",
-				"commit": "de6f0337966668af3bbc5aac411e70c74cb0fd21"
-			},
-			"resources": {
-				"cpus": 1,
-				"memory": 8
-			},
-			"inputs": [
-				{
-					"id": "7VlMPzgwdZ7DN32E",
-					"source_id": "f0ae51fb-4525-4a12-ba48-87e26c708e3f",
-					"type": "dataset",
-					"name": "ecephys_713655_2024-08-08_11-52-03",
-					"source_path": "ecephys_713655_2024-08-08_11-52-03/",
-					"target_path": "behavior_mount",
-					"collect": true
-				}
-			],
-			"results": {
-				"id": "06f5bd82-6294-4265-a19c-ed091cf6ee91"
-			}
-		},
-		{
 			"name": "capsule_lightning_pose_inference_evaluation_asset_registration_3",
 			"capsule": {
 				"id": "d57d4611-b49a-41de-ba60-7f28ae5cc05a",
 				"name": "Lightning Pose Inference, Evaluation, Asset Registration",
 				"slug": "6146766",
+				"commit": "5d7c5be8efcf8cd69488d84c1101dee332152fea",
 				"app_panel": true
 			},
 			"resources": {

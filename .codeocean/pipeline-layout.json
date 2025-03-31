@@ -1,17 +1,6 @@
 {
 	"edges": [
 		{
-			"id": "xy-edge__capsule_preview_inference_video_2-results",
-			"source": "capsule_preview_inference_video_2",
-			"target": "results"
-		},
-		{
-			"id": "xy-edge__f0ae51fb-4525-4a12-ba48-87e26c708e3f-capsule_preview_inference_video_2",
-			"selected": false,
-			"source": "f0ae51fb-4525-4a12-ba48-87e26c708e3f",
-			"target": "capsule_preview_inference_video_2"
-		},
-		{
 			"id": "xy-edge__f0ae51fb-4525-4a12-ba48-87e26c708e3f-capsule_lightning_pose_inference_evaluation_asset_registration_3",
 			"selected": false,
 			"source": "f0ae51fb-4525-4a12-ba48-87e26c708e3f",
@@ -39,18 +28,6 @@
 			"type": "results"
 		},
 		{
-			"data": {
-				"capsule_id": "06f5bd82-6294-4265-a19c-ed091cf6ee91"
-			},
-			"id": "capsule_preview_inference_video_2",
-			"position": {
-				"x": 710.2009786015551,
-				"y": 250.44490323682408
-			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
 			"id": "f0ae51fb-4525-4a12-ba48-87e26c708e3f",
 			"position": {
 				"x": 892.9391457791462,
@@ -65,10 +42,10 @@
 			},
 			"id": "capsule_lightning_pose_inference_evaluation_asset_registration_3",
 			"position": {
-				"x": 1033.7396809336715,
+				"x": 999.6740154921213,
 				"y": 256.5223057275543
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -77,14 +54,14 @@
 				"x": 1241.8988994817603,
 				"y": 61.74826198007801
 			},
-			"selected": true,
+			"selected": false,
 			"type": "dataset"
 		}
 	],
-	"timestamp": 1743447913532,
+	"timestamp": 1743455613458,
 	"viewport": {
-		"x": -265.77076416267937,
-		"y": 137.56718916528925,
-		"zoom": 0.6011319126187312
+		"x": -123.81529546357535,
+		"y": 31.918834588717914,
+		"zoom": 0.4696811229903236
 	}
 }
