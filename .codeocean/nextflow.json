@@ -2,49 +2,12 @@
 	"version": 1,
 	"processes": [
 		{
-			"name": "capsule_lightning_pose_inference_evaluation_asset_registration_3",
-			"capsule": {
-				"id": "d57d4611-b49a-41de-ba60-7f28ae5cc05a",
-				"name": "Lightning Pose Inference and Evaluation",
-				"slug": "6146766",
-				"commit": "717027cb65d079d6359b846ab392c9ff77867675",
-				"image_tag": "6e96a819018758254b502b73d06225b5",
-				"app_panel": true
-			},
-			"resources": {
-				"cpus": 16,
-				"memory": 61,
-				"gpus": 1
-			},
-			"inputs": [
-				{
-					"id": "F4g5ig62GpISLflM",
-					"source_id": "f0ae51fb-4525-4a12-ba48-87e26c708e3f",
-					"type": "dataset",
-					"name": "ecephys_713655_2024-08-08_11-52-03",
-					"source_path": "ecephys_713655_2024-08-08_11-52-03/",
-					"target_path": "behavior_mount",
-					"collect": true
-				},
-				{
-					"id": "LPSb1bHVVoHLGmQs",
-					"source_id": "64eb740a-a74d-4e9b-8bff-c78c953bf32a",
-					"type": "dataset",
-					"name": "342_NP.3_327_NP.2_Front_Face",
-					"source_path": "342_NP.3_327_NP.2_Front_Face/",
-					"target_path": "model_mount",
-					"collect": true
-				}
-			]
-		},
-		{
 			"name": "capsule_upload_derived_data_asset_4",
 			"capsule": {
 				"id": "155077de-0d66-49a7-8c0c-a86c8ca54e72",
 				"name": "Upload Derived Data Asset",
 				"slug": "3310875",
-				"commit": "a2688edb5b457a40abfa15639c1fc6305d4be82f",
-				"image_tag": "83f37d2cd6520a54625c12062dc35042"
+				"commit": "a2688edb5b457a40abfa15639c1fc6305d4be82f"
 			},
 			"resources": {
 				"cpus": 1,
@@ -52,11 +15,10 @@
 			},
 			"inputs": [
 				{
-					"id": "2l3PCxOItuWOWUl1",
-					"source_id": "capsule_lightning_pose_inference_evaluation_asset_registration_3",
+					"id": "GrHNi60hELXOmj77",
+					"source_id": "capsule_lightning_pose_inference_and_evaluation_5",
 					"type": "capsule",
 					"name": "Lightning Pose Inference and Evaluation",
-					"target_path": "lp_output",
 					"collect": true
 				},
 				{
@@ -71,6 +33,38 @@
 			"results": {
 				"id": "155077de-0d66-49a7-8c0c-a86c8ca54e72"
 			}
+		},
+		{
+			"name": "capsule_lightning_pose_inference_and_evaluation_5",
+			"capsule": {
+				"id": "d57d4611-b49a-41de-ba60-7f28ae5cc05a",
+				"name": "Lightning Pose Inference and Evaluation",
+				"slug": "6146766",
+				"app_panel": true
+			},
+			"resources": {
+				"cpus": 16,
+				"memory": 61,
+				"gpus": 1
+			},
+			"inputs": [
+				{
+					"id": "mF7aSxuTY4BlvUx1",
+					"source_id": "64eb740a-a74d-4e9b-8bff-c78c953bf32a",
+					"type": "dataset",
+					"name": "342_NP.3_327_NP.2_Front_Face",
+					"source_path": "342_NP.3_327_NP.2_Front_Face/",
+					"collect": true
+				},
+				{
+					"id": "yB8VEuyUaeu4KRk1",
+					"source_id": "f0ae51fb-4525-4a12-ba48-87e26c708e3f",
+					"type": "dataset",
+					"name": "ecephys_713655_2024-08-08_11-52-03",
+					"source_path": "ecephys_713655_2024-08-08_11-52-03/",
+					"collect": true
+				}
+			]
 		}
 	]
 }
