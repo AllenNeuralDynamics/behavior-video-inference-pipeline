@@ -7,7 +7,8 @@
 				"id": "d57d4611-b49a-41de-ba60-7f28ae5cc05a",
 				"name": "Lightning Pose Inference and Evaluation",
 				"slug": "6146766",
-				"commit": "edd3e8c97e6eb03f04efffaa75e75f1224ed30e5",
+				"commit": "717027cb65d079d6359b846ab392c9ff77867675",
+				"image_tag": "6e96a819018758254b502b73d06225b5",
 				"app_panel": true
 			},
 			"resources": {
@@ -41,7 +42,9 @@
 			"capsule": {
 				"id": "155077de-0d66-49a7-8c0c-a86c8ca54e72",
 				"name": "Upload Derived Data Asset",
-				"slug": "3310875"
+				"slug": "3310875",
+				"commit": "a2688edb5b457a40abfa15639c1fc6305d4be82f",
+				"image_tag": "83f37d2cd6520a54625c12062dc35042"
 			},
 			"resources": {
 				"cpus": 1,

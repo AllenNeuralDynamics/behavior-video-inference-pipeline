@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:cb0184636b45a3f328b15043ef7747c96b365337c24d6f62861c61bccb3eec0b
+// hash:sha256:2a12892d9ea80ba9502fe1bdd0bfdcf1f2cc9a1f9226eef3dd0cb1d17c7770b6
 
 nextflow.enable.dsl = 1
 
@@ -12,7 +12,7 @@ ecephys_713655_2024_08_08_11_52_03_to_upload_derived_data_asset_3 = channel.from
 // capsule - Lightning Pose Inference and Evaluation
 process capsule_lightning_pose_inference_evaluation_asset_registration_3 {
 	tag 'capsule-6146766'
-	container "$REGISTRY_HOST/capsule/d57d4611-b49a-41de-ba60-7f28ae5cc05a"
+	container "$REGISTRY_HOST/capsule/d57d4611-b49a-41de-ba60-7f28ae5cc05a:6e96a819018758254b502b73d06225b5"
 
 	cpus 16
 	memory '61 GB'
@@ -43,7 +43,7 @@ process capsule_lightning_pose_inference_evaluation_asset_registration_3 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-6146766.git" capsule-repo
-	git -C capsule-repo checkout edd3e8c97e6eb03f04efffaa75e75f1224ed30e5 --quiet
+	git -C capsule-repo checkout 717027cb65d079d6359b846ab392c9ff77867675 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -59,7 +59,7 @@ process capsule_lightning_pose_inference_evaluation_asset_registration_3 {
 // capsule - Upload Derived Data Asset
 process capsule_upload_derived_data_asset_4 {
 	tag 'capsule-3310875'
-	container "$REGISTRY_HOST/capsule/155077de-0d66-49a7-8c0c-a86c8ca54e72"
+	container "$REGISTRY_HOST/capsule/155077de-0d66-49a7-8c0c-a86c8ca54e72:83f37d2cd6520a54625c12062dc35042"
 
 	cpus 1
 	memory '8 GB'
@@ -89,6 +89,7 @@ process capsule_upload_derived_data_asset_4 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-3310875.git" capsule-repo
+	git -C capsule-repo checkout a2688edb5b457a40abfa15639c1fc6305d4be82f --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
