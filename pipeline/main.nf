@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:6df14c406ef42f780c3c8211a685aaff03e44d28d2b276c02e6a2ede8471e10b
+// hash:sha256:ca6bcf1000af6fa08ac37b995d01f5c3f4eb83244a6d500c48a98a331cb7bbb0
 
 nextflow.enable.dsl = 1
 
@@ -12,7 +12,7 @@ ecephys_713655_2024_08_08_11_52_03_to_lightning_pose_inference_and_evaluation_3 
 // capsule - Upload Derived Data Asset
 process capsule_upload_derived_data_asset_4 {
 	tag 'capsule-3310875'
-	container "$REGISTRY_HOST/capsule/155077de-0d66-49a7-8c0c-a86c8ca54e72"
+	container "$REGISTRY_HOST/capsule/155077de-0d66-49a7-8c0c-a86c8ca54e72:83f37d2cd6520a54625c12062dc35042"
 
 	cpus 1
 	memory '8 GB'
@@ -58,7 +58,7 @@ process capsule_upload_derived_data_asset_4 {
 // capsule - Lightning Pose Inference and Evaluation
 process capsule_lightning_pose_inference_and_evaluation_5 {
 	tag 'capsule-6146766'
-	container "$REGISTRY_HOST/capsule/d57d4611-b49a-41de-ba60-7f28ae5cc05a"
+	container "$REGISTRY_HOST/capsule/d57d4611-b49a-41de-ba60-7f28ae5cc05a:6e96a819018758254b502b73d06225b5"
 
 	cpus 16
 	memory '61 GB'
@@ -66,7 +66,7 @@ process capsule_lightning_pose_inference_and_evaluation_5 {
 	label 'gpu'
 
 	input:
-	path 'capsule/data' from ecephys_713655_2024_08_08_11_52_03_to_lightning_pose_inference_and_evaluation_3.collect()
+	path 'capsule/data/behavior_mount' from ecephys_713655_2024_08_08_11_52_03_to_lightning_pose_inference_and_evaluation_3.collect()
 
 	output:
 	path 'capsule/results/*' into capsule_lightning_pose_inference_and_evaluation_5_to_capsule_upload_derived_data_asset_4_1
@@ -85,10 +85,11 @@ process capsule_lightning_pose_inference_and_evaluation_5 {
 	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
-	ln -s "/tmp/data/342_NP.3_327_NP.2_Front_Face" "capsule/data/342_NP.3_327_NP.2_Front_Face" # id: 64eb740a-a74d-4e9b-8bff-c78c953bf32a
+	ln -s "/tmp/data/342_NP.3_327_NP.2_Front_Face" "capsule/data/model_mount" # id: 64eb740a-a74d-4e9b-8bff-c78c953bf32a
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-6146766.git" capsule-repo
+	git -C capsule-repo checkout 717027cb65d079d6359b846ab392c9ff77867675 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
