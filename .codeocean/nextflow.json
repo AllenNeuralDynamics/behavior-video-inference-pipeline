@@ -20,6 +20,7 @@
 					"source_id": "capsule_lightning_pose_inference_and_evaluation_5",
 					"type": "capsule",
 					"name": "Lightning Pose Inference and Evaluation",
+					"target_path": "lp_output",
 					"collect": true
 				},
 				{
@@ -41,8 +42,8 @@
 				"id": "d57d4611-b49a-41de-ba60-7f28ae5cc05a",
 				"name": "Lightning Pose Inference and Evaluation",
 				"slug": "6146766",
-				"commit": "717027cb65d079d6359b846ab392c9ff77867675",
-				"image_tag": "6e96a819018758254b502b73d06225b5",
+				"commit": "d65dd83ef9c515734e58eb29e7a6053aaf8ecfe1",
+				"image_tag": "6c506baf9fe56abd333af5707532c7a6",
 				"app_panel": true
 			},
 			"resources": {

@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:ca6bcf1000af6fa08ac37b995d01f5c3f4eb83244a6d500c48a98a331cb7bbb0
+// hash:sha256:ad4f1d4c42c72c36c18139e42b7dd664742d33a6fedab0957b1e56b042c80f47
 
 nextflow.enable.dsl = 1
 
@@ -20,7 +20,7 @@ process capsule_upload_derived_data_asset_4 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from capsule_lightning_pose_inference_and_evaluation_5_to_capsule_upload_derived_data_asset_4_1.collect()
+	path 'capsule/data/lp_output/' from capsule_lightning_pose_inference_and_evaluation_5_to_capsule_upload_derived_data_asset_4_1.collect()
 	path 'capsule/data' from ecephys_713655_2024_08_08_11_52_03_to_upload_derived_data_asset_2.collect()
 
 	output:
@@ -58,7 +58,7 @@ process capsule_upload_derived_data_asset_4 {
 // capsule - Lightning Pose Inference and Evaluation
 process capsule_lightning_pose_inference_and_evaluation_5 {
 	tag 'capsule-6146766'
-	container "$REGISTRY_HOST/capsule/d57d4611-b49a-41de-ba60-7f28ae5cc05a:6e96a819018758254b502b73d06225b5"
+	container "$REGISTRY_HOST/capsule/d57d4611-b49a-41de-ba60-7f28ae5cc05a:6c506baf9fe56abd333af5707532c7a6"
 
 	cpus 16
 	memory '61 GB'
@@ -89,7 +89,7 @@ process capsule_lightning_pose_inference_and_evaluation_5 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-6146766.git" capsule-repo
-	git -C capsule-repo checkout 717027cb65d079d6359b846ab392c9ff77867675 --quiet
+	git -C capsule-repo checkout d65dd83ef9c515734e58eb29e7a6053aaf8ecfe1 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
