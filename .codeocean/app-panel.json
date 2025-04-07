@@ -2,11 +2,11 @@
 	"version": 1,
 	"datasets": [
 		{
-			"id": "f0ae51fb-4525-4a12-ba48-87e26c708e3f",
+			"id": "6562f6c0-aa8b-41bf-9289-f294ba93362a",
 			"name": "Behavior Data Asset"
 		},
 		{
-			"id": "64eb740a-a74d-4e9b-8bff-c78c953bf32a",
+			"id": "c63238ff-a4ad-422b-8359-09752abda63a",
 			"name": "Trained Lightning Pose Model"
 		}
 	],

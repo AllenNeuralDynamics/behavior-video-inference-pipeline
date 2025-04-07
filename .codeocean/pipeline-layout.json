@@ -6,55 +6,45 @@
 			"target": "results"
 		},
 		{
-			"id": "xy-edge__f0ae51fb-4525-4a12-ba48-87e26c708e3f-capsule_upload_derived_data_asset_4",
-			"source": "f0ae51fb-4525-4a12-ba48-87e26c708e3f",
+			"id": "xy-edge__6562f6c0-aa8b-41bf-9289-f294ba93362a-capsule_upload_derived_data_asset_4",
+			"source": "6562f6c0-aa8b-41bf-9289-f294ba93362a",
 			"target": "capsule_upload_derived_data_asset_4"
 		},
 		{
-			"id": "xy-edge__f0ae51fb-4525-4a12-ba48-87e26c708e3f-capsule_lightning_pose_inference_and_evaluation_5",
-			"selected": false,
-			"source": "f0ae51fb-4525-4a12-ba48-87e26c708e3f",
+			"id": "xy-edge__6562f6c0-aa8b-41bf-9289-f294ba93362a-capsule_lightning_pose_inference_and_evaluation_5",
+			"source": "6562f6c0-aa8b-41bf-9289-f294ba93362a",
 			"target": "capsule_lightning_pose_inference_and_evaluation_5"
 		},
 		{
-			"id": "xy-edge__64eb740a-a74d-4e9b-8bff-c78c953bf32a-capsule_lightning_pose_inference_and_evaluation_5",
-			"selected": false,
-			"source": "64eb740a-a74d-4e9b-8bff-c78c953bf32a",
+			"id": "xy-edge__c63238ff-a4ad-422b-8359-09752abda63a-capsule_lightning_pose_inference_and_evaluation_5",
+			"source": "c63238ff-a4ad-422b-8359-09752abda63a",
 			"target": "capsule_lightning_pose_inference_and_evaluation_5"
 		},
 		{
 			"id": "xy-edge__capsule_lightning_pose_inference_and_evaluation_5-capsule_upload_derived_data_asset_4",
 			"source": "capsule_lightning_pose_inference_and_evaluation_5",
 			"target": "capsule_upload_derived_data_asset_4"
+		},
+		{
+			"id": "xy-edge__6562f6c0-aa8b-41bf-9289-f294ba93362a-capsule_preview_inference_video_6",
+			"source": "6562f6c0-aa8b-41bf-9289-f294ba93362a",
+			"target": "capsule_preview_inference_video_6"
+		},
+		{
+			"id": "xy-edge__capsule_preview_inference_video_6-results",
+			"source": "capsule_preview_inference_video_6",
+			"target": "results"
 		}
 	],
 	"nodes": [
 		{
 			"id": "results",
 			"position": {
-				"x": 949.8391171468081,
-				"y": 824.1257935346687
+				"x": 963.1953097869007,
+				"y": 821.45455500665
 			},
 			"selected": false,
 			"type": "results"
-		},
-		{
-			"id": "f0ae51fb-4525-4a12-ba48-87e26c708e3f",
-			"position": {
-				"x": 917.1249271991837,
-				"y": 43.63846102641736
-			},
-			"selected": false,
-			"type": "dataset"
-		},
-		{
-			"id": "64eb740a-a74d-4e9b-8bff-c78c953bf32a",
-			"position": {
-				"x": 1286.8153506904011,
-				"y": 61.74826198007801
-			},
-			"selected": false,
-			"type": "dataset"
 		},
 		{
 			"data": {
@@ -62,8 +52,8 @@
 			},
 			"id": "capsule_upload_derived_data_asset_4",
 			"position": {
-				"x": 892.8598911963718,
-				"y": 499.54127102637267
+				"x": 903.5448453084464,
+				"y": 462.1439316341124
 			},
 			"selected": false,
 			"type": "capsule"
@@ -74,17 +64,40 @@
 			},
 			"id": "capsule_lightning_pose_inference_and_evaluation_5",
 			"position": {
-				"x": 1134.9273664531618,
-				"y": 241.4005377387512
+				"x": 1158.968513205329,
+				"y": 233.3868221546955
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "06f5bd82-6294-4265-a19c-ed091cf6ee91"
+			},
+			"id": "capsule_preview_inference_video_6",
+			"position": {
+				"x": 566.5045887925639,
+				"y": 268.15004633389935
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"id": "6562f6c0-aa8b-41bf-9289-f294ba93362a",
+			"position": {
+				"x": 917.1249271991837,
+				"y": 43.63846102641736
+			},
+			"type": "dataset"
+		},
+		{
+			"id": "c63238ff-a4ad-422b-8359-09752abda63a",
+			"position": {
+				"x": 1286.8153506904011,
+				"y": 61.74826198007801
+			},
+			"type": "dataset"
 		}
 	],
-	"timestamp": 1743614697804,
-	"viewport": {
-		"x": -389.27998040200407,
-		"y": 2.9098081255205557,
-		"zoom": 0.7140114631196485
-	}
+	"timestamp": 1743717093569
 }

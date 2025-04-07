@@ -2,12 +2,12 @@
 	"version": 1,
 	"attached_datasets": [
 		{
-			"id": "64eb740a-a74d-4e9b-8bff-c78c953bf32a",
-			"mount": "342_NP.3_327_NP.2_Front_Face"
+			"id": "6562f6c0-aa8b-41bf-9289-f294ba93362a",
+			"mount": "behavior_mount"
 		},
 		{
-			"id": "f0ae51fb-4525-4a12-ba48-87e26c708e3f",
-			"mount": "ecephys_713655_2024-08-08_11-52-03"
+			"id": "c63238ff-a4ad-422b-8359-09752abda63a",
+			"mount": "model_mount"
 		}
 	]
 }

@@ -7,28 +7,29 @@
 				"id": "155077de-0d66-49a7-8c0c-a86c8ca54e72",
 				"name": "Upload Derived Data Asset",
 				"slug": "3310875",
-				"commit": "a2688edb5b457a40abfa15639c1fc6305d4be82f",
+				"commit": "b03002f1b26308a8c8c8e45356866fa4ad2732f0",
 				"image_tag": "83f37d2cd6520a54625c12062dc35042"
 			},
 			"resources": {
-				"cpus": 1,
-				"memory": 8
+				"cpus": 4,
+				"memory": 32
 			},
 			"inputs": [
+				{
+					"id": "GzSZkpuFa0OEnsUI",
+					"source_id": "6562f6c0-aa8b-41bf-9289-f294ba93362a",
+					"type": "dataset",
+					"name": "behavior_mount",
+					"source_path": "behavior_mount/",
+					"target_path": "behavior_mount",
+					"collect": true
+				},
 				{
 					"id": "GrHNi60hELXOmj77",
 					"source_id": "capsule_lightning_pose_inference_and_evaluation_5",
 					"type": "capsule",
 					"name": "Lightning Pose Inference and Evaluation",
 					"target_path": "lp_output",
-					"collect": true
-				},
-				{
-					"id": "GzSZkpuFa0OEnsUI",
-					"source_id": "f0ae51fb-4525-4a12-ba48-87e26c708e3f",
-					"type": "dataset",
-					"name": "ecephys_713655_2024-08-08_11-52-03",
-					"source_path": "ecephys_713655_2024-08-08_11-52-03/",
 					"collect": true
 				}
 			],
@@ -42,7 +43,7 @@
 				"id": "d57d4611-b49a-41de-ba60-7f28ae5cc05a",
 				"name": "Lightning Pose Inference and Evaluation",
 				"slug": "6146766",
-				"commit": "d65dd83ef9c515734e58eb29e7a6053aaf8ecfe1",
+				"commit": "0b83ee679a9cd4b9c0d82755bce875164d6066f7",
 				"image_tag": "6c506baf9fe56abd333af5707532c7a6",
 				"app_panel": true
 			},
@@ -54,23 +55,51 @@
 			"inputs": [
 				{
 					"id": "mF7aSxuTY4BlvUx1",
-					"source_id": "64eb740a-a74d-4e9b-8bff-c78c953bf32a",
+					"source_id": "c63238ff-a4ad-422b-8359-09752abda63a",
 					"type": "dataset",
-					"name": "342_NP.3_327_NP.2_Front_Face",
-					"source_path": "342_NP.3_327_NP.2_Front_Face/",
+					"name": "model_mount",
+					"source_path": "model_mount/",
 					"target_path": "model_mount",
 					"collect": true
 				},
 				{
 					"id": "yB8VEuyUaeu4KRk1",
-					"source_id": "f0ae51fb-4525-4a12-ba48-87e26c708e3f",
+					"source_id": "6562f6c0-aa8b-41bf-9289-f294ba93362a",
 					"type": "dataset",
-					"name": "ecephys_713655_2024-08-08_11-52-03",
-					"source_path": "ecephys_713655_2024-08-08_11-52-03/",
+					"name": "behavior_mount",
+					"source_path": "behavior_mount/",
 					"target_path": "behavior_mount",
 					"collect": true
 				}
 			]
+		},
+		{
+			"name": "capsule_preview_inference_video_6",
+			"capsule": {
+				"id": "06f5bd82-6294-4265-a19c-ed091cf6ee91",
+				"name": "Preview Inference Video",
+				"slug": "6942612",
+				"commit": "9ee0544c5014d391966a201840ce0fe2878b70f3",
+				"image_tag": "2faaa370733ebaff6632059b71a68c97"
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			},
+			"inputs": [
+				{
+					"id": "NfOO9zm6htlGyvT3",
+					"source_id": "6562f6c0-aa8b-41bf-9289-f294ba93362a",
+					"type": "dataset",
+					"name": "behavior_mount",
+					"source_path": "behavior_mount/",
+					"target_path": "behavior_mount",
+					"collect": true
+				}
+			],
+			"results": {
+				"id": "06f5bd82-6294-4265-a19c-ed091cf6ee91"
+			}
 		}
 	]
 }

@@ -1,27 +1,28 @@
 #!/usr/bin/env nextflow
-// hash:sha256:ad4f1d4c42c72c36c18139e42b7dd664742d33a6fedab0957b1e56b042c80f47
+// hash:sha256:679a7b2c0b65a795acb9b052aebab35efbeaf887b401e93760c251bf83619c51
 
 nextflow.enable.dsl = 1
 
-params.ecephys_713655_2024_08_08_11_52_03_url = 's3://aind-private-data-prod-o5171v/ecephys_713655_2024-08-08_11-52-03'
+params.behavior_mount_url = 's3://aind-private-data-prod-o5171v/multiplane-ophys_749315_2024-11-18_14-47-15'
 
-capsule_lightning_pose_inference_and_evaluation_5_to_capsule_upload_derived_data_asset_4_1 = channel.create()
-ecephys_713655_2024_08_08_11_52_03_to_upload_derived_data_asset_2 = channel.fromPath(params.ecephys_713655_2024_08_08_11_52_03_url + "/", type: 'any')
-ecephys_713655_2024_08_08_11_52_03_to_lightning_pose_inference_and_evaluation_3 = channel.fromPath(params.ecephys_713655_2024_08_08_11_52_03_url + "/", type: 'any')
+behavior_mount_to_upload_derived_data_asset_1 = channel.fromPath(params.behavior_mount_url + "/", type: 'any')
+capsule_lightning_pose_inference_and_evaluation_5_to_capsule_upload_derived_data_asset_4_2 = channel.create()
+behavior_mount_to_lightning_pose_inference_and_evaluation_3 = channel.fromPath(params.behavior_mount_url + "/", type: 'any')
+behavior_mount_to_preview_inference_video_4 = channel.fromPath(params.behavior_mount_url + "/", type: 'any')
 
 // capsule - Upload Derived Data Asset
 process capsule_upload_derived_data_asset_4 {
 	tag 'capsule-3310875'
 	container "$REGISTRY_HOST/capsule/155077de-0d66-49a7-8c0c-a86c8ca54e72:83f37d2cd6520a54625c12062dc35042"
 
-	cpus 1
-	memory '8 GB'
+	cpus 4
+	memory '32 GB'
 
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/lp_output/' from capsule_lightning_pose_inference_and_evaluation_5_to_capsule_upload_derived_data_asset_4_1.collect()
-	path 'capsule/data' from ecephys_713655_2024_08_08_11_52_03_to_upload_derived_data_asset_2.collect()
+	path 'capsule/data/behavior_mount' from behavior_mount_to_upload_derived_data_asset_1.collect()
+	path 'capsule/data/lp_output/' from capsule_lightning_pose_inference_and_evaluation_5_to_capsule_upload_derived_data_asset_4_2.collect()
 
 	output:
 	path 'capsule/results/*'
@@ -32,8 +33,8 @@ process capsule_upload_derived_data_asset_4 {
 	set -e
 
 	export CO_CAPSULE_ID=155077de-0d66-49a7-8c0c-a86c8ca54e72
-	export CO_CPUS=1
-	export CO_MEMORY=8589934592
+	export CO_CPUS=4
+	export CO_MEMORY=34359738368
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -42,7 +43,7 @@ process capsule_upload_derived_data_asset_4 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-3310875.git" capsule-repo
-	git -C capsule-repo checkout a2688edb5b457a40abfa15639c1fc6305d4be82f --quiet
+	git -C capsule-repo checkout b03002f1b26308a8c8c8e45356866fa4ad2732f0 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -66,10 +67,10 @@ process capsule_lightning_pose_inference_and_evaluation_5 {
 	label 'gpu'
 
 	input:
-	path 'capsule/data/behavior_mount' from ecephys_713655_2024_08_08_11_52_03_to_lightning_pose_inference_and_evaluation_3.collect()
+	path 'capsule/data/behavior_mount' from behavior_mount_to_lightning_pose_inference_and_evaluation_3.collect()
 
 	output:
-	path 'capsule/results/*' into capsule_lightning_pose_inference_and_evaluation_5_to_capsule_upload_derived_data_asset_4_1
+	path 'capsule/results/*' into capsule_lightning_pose_inference_and_evaluation_5_to_capsule_upload_derived_data_asset_4_2
 
 	script:
 	"""
@@ -85,11 +86,11 @@ process capsule_lightning_pose_inference_and_evaluation_5 {
 	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
-	ln -s "/tmp/data/342_NP.3_327_NP.2_Front_Face" "capsule/data/model_mount" # id: 64eb740a-a74d-4e9b-8bff-c78c953bf32a
+	ln -s "/tmp/data/model_mount" "capsule/data/model_mount" # id: c63238ff-a4ad-422b-8359-09752abda63a
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-6146766.git" capsule-repo
-	git -C capsule-repo checkout d65dd83ef9c515734e58eb29e7a6053aaf8ecfe1 --quiet
+	git -C capsule-repo checkout 0b83ee679a9cd4b9c0d82755bce875164d6066f7 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -97,6 +98,51 @@ process capsule_lightning_pose_inference_and_evaluation_5 {
 	cd capsule/code
 	chmod +x run
 	./run ${params.capsule_lightning_pose_inference_and_evaluation_5_args}
+
+	echo "[${task.tag}] completed!"
+	"""
+}
+
+// capsule - Preview Inference Video
+process capsule_preview_inference_video_6 {
+	tag 'capsule-6942612'
+	container "$REGISTRY_HOST/capsule/06f5bd82-6294-4265-a19c-ed091cf6ee91:2faaa370733ebaff6632059b71a68c97"
+
+	cpus 1
+	memory '8 GB'
+
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+
+	input:
+	path 'capsule/data/behavior_mount' from behavior_mount_to_preview_inference_video_4.collect()
+
+	output:
+	path 'capsule/results/*'
+
+	script:
+	"""
+	#!/usr/bin/env bash
+	set -e
+
+	export CO_CAPSULE_ID=06f5bd82-6294-4265-a19c-ed091cf6ee91
+	export CO_CPUS=1
+	export CO_MEMORY=8589934592
+
+	mkdir -p capsule
+	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
+	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
+	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
+
+	echo "[${task.tag}] cloning git repo..."
+	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-6942612.git" capsule-repo
+	git -C capsule-repo checkout 9ee0544c5014d391966a201840ce0fe2878b70f3 --quiet
+	mv capsule-repo/code capsule/code
+	rm -rf capsule-repo
+
+	echo "[${task.tag}] running capsule..."
+	cd capsule/code
+	chmod +x run
+	./run
 
 	echo "[${task.tag}] completed!"
 	"""
